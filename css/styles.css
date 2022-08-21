@@ -160,6 +160,13 @@ img {
   text-align: center;
   padding-bottom: 200px;
 }
+.hero-overlay {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../images/hero-bcg-img.jpg);
+}
 .hero-title {
   font-weight: 900;
   font-size: 44px;
@@ -200,6 +207,14 @@ img {
 .benefits-item {
   text-align: left;
   flex-basis: calc((100% - 90px) / 4);
+}
+.benefits-item::before {
+  display: inline-flex;
+  content: '';
+  width: 270px;
+  height: 120px;
+  outline: 1px solid tomato;
+  background-image: linear-gradient(to right, green, red);
 }
 .benefits-item:not(:last-child) {
   margin-right: 30px;
@@ -272,6 +287,22 @@ img {
   line-height: 1.19;
   letter-spacing: 0.03em;
 }
+.team-card-social {
+  justify-content: center;
+  gap: 30px;
+}
+.team-link {
+  text-decoration: none;
+}
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-icon {
+  width: 170px;
+  height: 92px;
+  outline: 1px solid tomato;
+  background-image: linear-gradient(to bottom, yellow, teal);
+}
 .site-footer {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -282,6 +313,10 @@ img {
   flex-direction: column;
   align-items: flex-start;
 }
+.footer-flexbox {
+  display: flex;
+}
+
 .footer-logo {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
