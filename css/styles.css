@@ -12,10 +12,15 @@
   --act-btn-txt-color: #ffffff;
   --logo-black-color: #000000;
   --logo-blue-color: #2196f3;
+  --benefits-bg-color: #f5f4fa;
   --team-bg-color: #f5f4fa;
   --team-card-color: #ffffff;
   --portfolio-btn-color: #f5f4fa;
   --portfolio-item-border: #eeeeee;
+  --team-social-link-color: #afb1b8;
+  --team-social-link-act-color: #ffffff;
+  --clients-icon-color: #afb1b8;
+  --clients-icon-act-color: #2196f3;
 }
 
 html {
@@ -26,7 +31,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-  /* outline: 1px solid teal;
+  /* outline: 1px solid teal; */
   /* это я оставил пока для удобства работы
   потом приберу */
 }
@@ -116,6 +121,7 @@ img {
 }
 .contacts-list {
   display: flex;
+  justify-content: center;
   margin-left: auto;
 }
 .mailto {
@@ -138,6 +144,16 @@ img {
 .mailto:focus,
 .telephone:focus {
   color: var(--accent-color);
+}
+.mailto,
+.telephone {
+  display: flex;
+  align-items: center;
+}
+.mailto-icon,
+.telephone-icon {
+  fill: currentColor;
+  margin-right: 10px;
 }
 .visually-hidden {
   position: absolute;
@@ -168,6 +184,7 @@ img {
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/hero-bcg-img.jpg);
+  background-color: var (--hero-bg-color);
 }
 .hero-title {
   font-weight: 900;
@@ -210,13 +227,18 @@ img {
   text-align: left;
   flex-basis: calc((100% - 90px) / 4);
 }
-.benefits-item::before {
-  display: inline-flex;
-  content: '';
+.benefits-item-svg {
+  display: flex;
   width: 270px;
   height: 120px;
-  outline: 1px solid tomato;
-  background-image: linear-gradient(to right, green, red);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--benefits-bg-color);
+  margin-bottom: 30px;
+}
+.benefits-item-icon {
+  fill: currentColor;
 }
 .benefits-item:not(:last-child) {
   margin-right: 30px;
@@ -265,7 +287,6 @@ img {
 }
 .team-card-txt {
   padding-top: 30px;
-  padding-bottom: 30px;
 }
 .team-item {
   flex-basis: calc((100% - 90px) / 4);
@@ -288,23 +309,61 @@ img {
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  margin-bottom: 16px;
 }
 .team-card-social {
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
+  padding-bottom: 30px;
+}
+.team-card-social-item {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
 }
 .team-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  color: var(--team-social-link-color);
+}
+.team-link:hover,
+.team-link:focus {
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--team-social-link-act-color);
+}
+.team-card-social-icon {
+  fill: currentColor;
 }
 .clients-item:not(:last-child) {
   margin-right: 30px;
 }
-.clients-icon {
+.clients-item-svg {
+  line-height: 0;
+  display: flex;
+  color: var(--clients-icon-color);
   width: 170px;
   height: 92px;
-  outline: 1px solid tomato;
-  background-image: linear-gradient(to bottom, yellow, teal);
+  border-radius: 4px;
+  border: 1px solid var(--clients-icon-color);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
 }
+.clients-item-svg:hover,
+.clients-item-svg:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.clients-item-icon {
+  fill: currentColor;
+}
+
 .site-footer {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -312,6 +371,7 @@ img {
 }
 .footer-flexbox {
   display: flex;
+  align-items: baseline;
 }
 .foter-contacts {
   flex-direction: column;
@@ -376,17 +436,30 @@ img {
   text-transform: uppercase;
   color: var(--footer-text-color);
 }
-
-.join-link {
-  display: inline-block;
+.join-list-item {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  outline: 1px solid red;
-  background-color: teal;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.join-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: var(--footer-text-color);
+}
+.join-link:hover,
+.join-link:focus {
+  border-radius: 50%;
+  background-color: var(--accent-color);
 }
 .join-list {
   gap: 10px;
+}
+.footer-social-icon {
+  fill: currentColor;
 }
 .portfolio-filter {
   display: flex;
@@ -420,6 +493,9 @@ img {
   color: var(--act-btn-txt-color);
   background-color: var(--accent-color);
   cursor: pointer;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
 .portfolio-list {
   display: flex;
@@ -435,6 +511,15 @@ img {
 .portfolio-item:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }
+.portfolio-item-link {
+  display: block;
+  text-decoration: none;
+}
+.portfolio-item-link:hover,
+.portfolio-item-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .portfolio-card-txt {
   padding: 20px;
   border-left: 1px solid var(--portfolio-item-border);
@@ -447,6 +532,7 @@ img {
   line-height: 2;
   letter-spacing: 0.06em;
   margin-bottom: 4px;
+  color: var(--main-text-color);
 }
 .portfolio-txt {
   font-size: 16px;
