@@ -184,6 +184,9 @@ img {
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/hero-bcg-img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-color: var (--hero-bg-color);
 }
 .hero-title {
@@ -229,8 +232,8 @@ img {
 }
 .benefits-item-svg {
   display: flex;
-  width: 270px;
-  height: 120px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   border-radius: 4px;
   justify-content: center;
   align-items: center;
@@ -340,15 +343,20 @@ img {
 .team-card-social-icon {
   fill: currentColor;
 }
+
+.clients-item {
+  flex-basis: calc((100% - 150px) / 6);
+}
+
 .clients-item:not(:last-child) {
   margin-right: 30px;
 }
 .clients-item-svg {
   line-height: 0;
-  display: flex;
+  display: block;
   color: var(--clients-icon-color);
-  width: 170px;
-  height: 92px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   border-radius: 4px;
   border: 1px solid var(--clients-icon-color);
   border-radius: 4px;
@@ -486,16 +494,10 @@ img {
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
-  padding-top: 6px;
-  padding-right: 25px;
-  padding-bottom: 6px;
-  padding-left: 25px;
   color: var(--act-btn-txt-color);
   background-color: var(--accent-color);
-  cursor: pointer;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+  box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%),
+    0px 2px 2px rgb(0 0 0 / 12%);
 }
 .portfolio-list {
   display: flex;
