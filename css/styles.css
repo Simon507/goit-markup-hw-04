@@ -232,8 +232,7 @@ img {
 }
 .benefits-item-svg {
   display: flex;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  height: 120px;
   border-radius: 4px;
   justify-content: center;
   align-items: center;
@@ -353,10 +352,9 @@ img {
 }
 .clients-item-svg {
   line-height: 0;
-  display: block;
+  display: flex;
   color: var(--clients-icon-color);
-  padding-top: 16px;
-  padding-bottom: 16px;
+  height: 92px;
   border-radius: 4px;
   border: 1px solid var(--clients-icon-color);
   border-radius: 4px;
